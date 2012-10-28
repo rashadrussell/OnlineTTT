@@ -1,0 +1,86 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>TicTacToe</title>
+
+
+<style type="text/css">
+  table {
+    border-collapse:collapse;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  body {
+    border-radius:10px;
+  }
+
+  td {
+    text-align: center;
+    font-size:50px;
+    font-family:arial,sans-serif;
+    width:166px;
+    height:166px;
+  }
+
+  td.marked {
+    width:166px;
+    height:166px;
+    font-size:50px;
+    color: red;
+  }
+
+  table, th, td {
+    border:1px solid black;
+  }
+</style>
+
+
+</head>
+<body>
+
+
+  <table>
+    <tr id="r1">
+      <td id="t1">1</td>
+      <td id="t2">2</td>
+      <td id="t3">3</td>
+    </tr>
+    <tr id="r2">
+      <td id="t4">4</td>
+      <td id="t5">5</td>
+      <td id="t6">6</td>
+    </tr>
+    <tr id="r3">
+      <td id="t7">7</td>
+      <td id="t8">8</td>
+      <td id="t9">9</td>
+    </tr>
+  </table>
+
+  <button type="button"/>RESET </button>
+  <p> hahahaahahha </p>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="tictactoe.js" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  var socket = io.connect('http://localhost:8080');
+
+  socket.on('connect', function () {
+    console.log("You are now connected");
+  });
+
+  socket.on('updateboard', function (tileId) {
+    ttt.markBoard('t9');
+  });
+
+  $(function () {
+
+    ttt.init();
+
+  });
+
+</script>
+</body>
+</html>
